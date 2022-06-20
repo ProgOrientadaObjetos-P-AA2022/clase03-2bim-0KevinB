@@ -30,20 +30,30 @@ public class Principal {
         
         ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
         // agregar elementos
+        listaEstudiantes.add(est1);
+        listaEstudiantes.add(est2);
         
         
         ArrayList<Policia> listaPolicias = new ArrayList<>();
         // agregar elementos
-        
+        listaPolicias.add(pol1);
+        listaPolicias.add(pol2);
         
         ReporteDocente rd = new ReporteDocente("0001Doc");
-        
+        rd.establecerListaDocentes(listaDocentes);
+        rd.calcularPromedioSueldos();
+                
         ReporteEstudiante re = new ReporteEstudiante("0001Est");
+        re.establecerLista(listaEstudiantes);
+        re.calcularMatriculas();
         
         ReportePolicia rp = new ReportePolicia("0001Pol");
-        
+        rp.establecerLista(listaPolicias);
+        rp.calcularPromedioEdad();
         System.out.println(rd);
+        System.out.println("-------------");
         System.out.println(re);
+        System.out.println("----------------");
         System.out.println(rp);
         
     }

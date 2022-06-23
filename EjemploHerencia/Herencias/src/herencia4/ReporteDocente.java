@@ -19,7 +19,6 @@ public class ReporteDocente extends Reporte {
 
     public ReporteDocente(String c) {
         super(c);
-
     }
 
     public void establecerListaDocentes(ArrayList<Docente> x) {
@@ -41,16 +40,16 @@ public class ReporteDocente extends Reporte {
     }
 
     @Override
-
     public String toString() {
-
-        String cadena = String.format("DATOS DOCENTE");
-        for (int i = 0; i < obtenerListaDocentes().size(); i++) {
-            cadena = String.format("%s\n%s - código: ",
-                    cadena, lista.get(i), super.toString());
+        String cadena = "";
+        cadena = String.format("%s%s\n", cadena, super.toString());
+        for (int i = 0; i < lista.size(); i++) {
+            cadena = String.format("%s\nNombre: %s\nApellido: %s\n"
+                    + "Edad: %s\nMatricula: %.2f\n", cadena,lista.get(i).getNombre(),
+            lista.get(i).getApellido(), lista.get(i).getEdad(), lista.get(i).getSueldo());
         }
-        cadena = String.format("%s\nPromedio total sueldos: %.2f\n", cadena,
-                obtenerPromedioSueldos());
+        cadena = String.format("%s\nPromedio de matriculas: %.2f", cadena, 
+                promedioSueldos);
         return cadena;
     }
 }
